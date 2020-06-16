@@ -1,0 +1,59 @@
+@media only screen and (max-width: 375px) {
+  * {
+    margin: 0;
+  }
+
+  body {
+    background-color: #e5e5e5;
+  }
+  header {
+    background-color: #2d4d65;
+    height: 270px;
+  }
+  header h1 {
+    padding-top: 100px;
+    padding-left: 100px;
+    color: #e5e5e5;
+  }
+  header img {
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  .body {
+    margin-top: 0;
+    background-color: #333333;
+
+    height: 397px;
+    left: 327.28px;
+    top: 260.23px;
+  }
+  .butt {
+    align-content: center;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .butt button {
+    margin-top: 9px;
+    display: list-item;
+    border-radius: 15.5px;
+    border: none;
+    outline: none;
+
+    font-weight: 600;
+    color: rgb(14, 13, 13);
+    font-family: Karma;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 29px;
+  }
+
+  svg {
+    position: absolute;
+    margin-top: -70px;
+  }
+}
