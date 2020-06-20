@@ -166,6 +166,7 @@
   }
   header {
     background-color: #2d4d65;
+    width: 375px;
     height: 270px;
     transition: 0.8s ease-in-out;
   }
@@ -182,7 +183,7 @@
   }
   header h1 {
     padding-top: 100px;
-    padding-left: 56px;
+    padding-left: 59px;
     color: #e5e5e5;
   }
   header img {
@@ -194,6 +195,7 @@
     margin-top: 0;
     background-color: #333333;
     transition: 0.8s ease-in-out;
+    width: 375px;
 
     height: 397px;
 
@@ -213,8 +215,8 @@
   .question {
     width: 320px;
     height: 160px;
-    top: 33%;
-    left: 50%;
+    top: 38%;
+    left: 58.5%;
     transform: translateX(-50%) translateY(-50%);
     transition: 2s ease-in-out;
     position: absolute;
@@ -238,7 +240,7 @@
   }
   .options {
     position: relative;
-    top: 45%;
+    top: 35%;
     margin-left: 20px;
     width: 338px;
     transition: 2s ease-in-out;
@@ -286,7 +288,7 @@
     transition: 0.8s ease-in-out;
 
     top: 50%;
-    left: 50%;
+    left: 59.4%;
     transform: translateX(-50%) translateY(-50%);
   }
   .buttb {
