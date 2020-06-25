@@ -1,3 +1,25 @@
+window.addEventListener("load", preload());
+
+function preload() {
+  load = document.getElementById("loader");
+  load.classList.add("loaded");
+
+  function move() {
+    line = document.querySelector(".line");
+    pos = 0;
+    moving = setInterval(frame, 0.9);
+    function frame() {
+      if (pos == 900) {
+        clearInterval(moving);
+      } else {
+        pos++;
+        line.style.marginTop = pos + "px";
+      }
+    }
+  }
+  move();
+}
+
 function home() {
   Header = document.getElementById("header");
   Body = document.getElementById("body");
@@ -20,7 +42,8 @@ function home() {
   startButton.classList.add("buttb");
   startButton.addEventListener("click", (e) => {
     if (e.target.classList == "buttb") {
-      quiz1();
+      swipe();
+      setTimeout(quiz1, 550);
     }
   });
 
@@ -37,6 +60,14 @@ function home() {
   Butt.appendChild(scoreButton);
 }
 home();
+function swipe() {
+  Header.innerHTML = "";
+
+  header.classList.add("hswipe");
+  body.classList.add("bswipe");
+  Butt = document.getElementById("butt");
+  Butt.remove();
+}
 
 function quiz1() {
   Header = document.getElementById("header");
@@ -48,19 +79,21 @@ function quiz1() {
   Timer.innerHTML = "00:10";
   Timer.classList.add("timer");
 
-  Header.innerHTML = "";
-
-  header.classList.add("hswipe");
-  body.classList.add("bswipe");
-  Butt = document.getElementById("butt");
-  Butt.remove();
-
   qDiv = document.createElement("div");
   qDiv.id = "qdiv";
+
   Question = document.createElement("div");
   Question.classList.add("question");
   qp = document.createElement("p");
   qp.innerHTML = "who is the founder of under armour ?";
+
+  correctAns = document.createElement("div");
+  Ans = document.createElement("h4");
+
+  Ans.textContent = "correct answer is";
+  correctAns.classList.add("question", "correctans");
+  ansP = document.createElement("h1");
+  ansP.classList.add("answer");
 
   nextButton = document.createElement("input");
   nextButton.id = "next";
@@ -71,6 +104,7 @@ function quiz1() {
   Options = document.createElement("div");
   Options.id = "options";
   Options.classList.add("options");
+
   optionA = document.createElement("input");
   optionA.type = "button";
   optionA.value = "justin beiber";
@@ -81,10 +115,15 @@ function quiz1() {
   optionB.value = "kevin plank";
   optionB.classList.add("optionsb");
 
+  optionB.id = "correct";
+  const corr = optionB;
+  ansP.textContent = corr.value;
+
   optionC = document.createElement("input");
   optionC.type = "button";
   optionC.value = "dwayne johnson";
   optionC.classList.add("optionsb");
+  optionC.setAttribute("class", "optionsb");
 
   optionD = document.createElement("input");
   optionD.type = "button";
@@ -96,6 +135,21 @@ function quiz1() {
   homeButton.type = "button";
   homeButton.value = "home";
   homeButton.classList.add("homeb");
+
+  Options.addEventListener("click", (e) => {
+    optionA.disabled = true;
+    optionB.disabled = true;
+    optionC.disabled = true;
+    optionD.disabled = true;
+    if (e.target.id == "correct") {
+      e.target.style.color = "green";
+    } else {
+      e.target.style.color = "red";
+
+      correctAns.style.display = "list-item";
+      qp.style.display = "none";
+    }
+  });
 
   homeButton.addEventListener("click", (e) => {
     if (e.target.classList == "homeb") {
@@ -121,6 +175,9 @@ function quiz1() {
   Options.appendChild(optionD);
   qDiv.appendChild(nextButton);
   qDiv.appendChild(Question);
+  qDiv.appendChild(correctAns);
+  correctAns.appendChild(Ans);
+  correctAns.appendChild(ansP);
   Question.appendChild(qp);
   Header.appendChild(Timer);
 }
