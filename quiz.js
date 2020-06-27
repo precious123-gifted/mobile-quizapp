@@ -1,3 +1,42 @@
+var question = [
+  {
+    q: "who is the founder of under armour ?",
+    opt: ["justin beiber", "kevin plank", "dwayne johnson", "andy hubbard"],
+    ans: "kevin plank",
+  },
+  {
+    q: "What's the biggest animal in the world?",
+    opt: ["whale shark", "the african elephant", "the blue whale", "ostrich"],
+    ans: "the blue whale",
+  },
+  {
+    q: "What is the capital of Iceland?",
+    opt: ["Reykjavík", "tirana", "zagreb", "budapest"],
+    ans: "Reykjavík",
+  },
+  {
+    q: "Who painted the Mona Lisa?",
+    opt: ["andy warhol", "pablo picasso", "mercury", "leonardo da vinci"],
+    ans: "mercury",
+  },
+  {
+    q: "What is the largest country in the world?",
+    opt: ["spain", "russia", "china", "netherland"],
+    ans: "russia",
+  },
+  {
+    q: "How many valves does the heart have?",
+    opt: ["one", "two", "three", "four"],
+    ans: "four",
+  },
+  {
+    q: "What's a baby rabbit called?",
+    opt: ["chick", "rabbin", "A kit", "puppy"],
+    ans: "A kit",
+  },
+];
+var no = 0;
+
 window.addEventListener("load", preload());
 
 function preload() {
@@ -75,8 +114,30 @@ function quiz1() {
   snhButton = document.getElementById("butt");
 
   Timer = document.createElement("div");
+
   Timer.id = "timer";
-  Timer.innerHTML = "00:10";
+
+  var sec = 10;
+  var time = setInterval(timer, 1000);
+  function timer() {
+    Timer.textContent = "00" + ":" + sec;
+    sec--;
+
+    if (sec == -1) {
+      clearInterval(time);
+      correctAns.style.display = "list-item";
+      qp.style.display = "none";
+      nextButton.style.display = "";
+      optionA.disabled = true;
+      optionB.disabled = true;
+      optionC.disabled = true;
+      optionD.disabled = true;
+    }
+    if (sec < 10) {
+      sec = "0" + sec;
+    }
+  }
+
   Timer.classList.add("timer");
 
   qDiv = document.createElement("div");
@@ -85,7 +146,7 @@ function quiz1() {
   Question = document.createElement("div");
   Question.classList.add("question");
   qp = document.createElement("p");
-  qp.innerHTML = "who is the founder of under armour ?";
+  qp.innerHTML = question[no].q;
 
   correctAns = document.createElement("div");
   Ans = document.createElement("h4");
@@ -100,6 +161,9 @@ function quiz1() {
   nextButton.type = "button";
   nextButton.value = "next";
   nextButton.classList.add("qdivb");
+  nextButton.style.display = "none";
+
+  nextButton.addEventListener("click", quiz2);
 
   Options = document.createElement("div");
   Options.id = "options";
@@ -107,27 +171,25 @@ function quiz1() {
 
   optionA = document.createElement("input");
   optionA.type = "button";
-  optionA.value = "justin beiber";
+  optionA.value = question[no].opt[0];
   optionA.classList.add("optionsb");
 
   optionB = document.createElement("input");
   optionB.type = "button";
-  optionB.value = "kevin plank";
+  optionB.value = question[no].opt[1];
   optionB.classList.add("optionsb");
 
-  optionB.id = "correct";
-  const corr = optionB;
-  ansP.textContent = corr.value;
+  ansP.textContent = question[no].ans;
 
   optionC = document.createElement("input");
   optionC.type = "button";
-  optionC.value = "dwayne johnson";
+  optionC.value = question[no].opt[2];
   optionC.classList.add("optionsb");
   optionC.setAttribute("class", "optionsb");
 
   optionD = document.createElement("input");
   optionD.type = "button";
-  optionD.value = "andy hubbard";
+  optionD.value = question[no].opt[3];
   optionD.classList.add("optionsb");
 
   homeButton = document.createElement("input");
@@ -136,20 +198,85 @@ function quiz1() {
   homeButton.value = "home";
   homeButton.classList.add("homeb");
 
+  var ans = question[no].ans;
+
   Options.addEventListener("click", (e) => {
+    clearInterval(time);
     optionA.disabled = true;
     optionB.disabled = true;
     optionC.disabled = true;
     optionD.disabled = true;
-    if (e.target.id == "correct") {
-      e.target.style.color = "green";
+
+    nextButton.style.display = "";
+
+    if (e.target.value == ans) {
+      const selected = e.target;
+      selected.classList.add("green");
     } else {
-      e.target.style.color = "red";
+      const selected = e.target;
+      selected.classList.add("red");
 
       correctAns.style.display = "list-item";
       qp.style.display = "none";
     }
   });
+
+  function quiz2() {
+    if (no < question.length - 1) {
+      clearInterval(time);
+
+      var sec = 10;
+      var time = setInterval(timer, 1000);
+      function timer() {
+        Timer.textContent = "00" + ":" + sec;
+        sec--;
+
+        if (sec == -1) {
+          clearInterval(time);
+          correctAns.style.display = "list-item";
+          qp.style.display = "none";
+          nextButton.style.display = "";
+          optionA.disabled = true;
+          optionB.disabled = true;
+          optionC.disabled = true;
+          optionD.disabled = true;
+        }
+        if (sec < 10) {
+          sec = "0" + sec;
+        }
+      }
+
+      Body.appendChild(Options);
+      nextButton.style.display = "none";
+
+      correctAns.style.display = "none";
+      qp.style.display = "";
+      Options.addEventListener("click", () => {
+        clearInterval(time);
+      });
+      optionA.classList.remove("red", "green");
+      optionB.classList.remove("red", "green");
+      optionC.classList.remove("red", "green");
+      optionD.classList.remove("red", "green");
+
+      optionA.disabled = !true;
+      optionB.disabled = !true;
+      optionC.disabled = !true;
+      optionD.disabled = !true;
+
+      no++;
+
+      qp.innerHTML = question[no].q;
+      optionA.value = question[no].opt[0];
+      optionB.value = question[no].opt[1];
+      optionC.value = question[no].opt[2];
+      optionD.value = question[no].opt[3];
+      ansP.textContent = question[no].ans;
+      ans = question[no].ans;
+    } else {
+      alert("quiz finished");
+    }
+  }
 
   homeButton.addEventListener("click", (e) => {
     if (e.target.classList == "homeb") {

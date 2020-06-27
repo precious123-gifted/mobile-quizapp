@@ -39,12 +39,12 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #2d4d65;
+    background-color: #265c85;
     height: 270px;
     transition: 0.8s ease-in-out;
   }
   .hswipe {
-    background-color: #2d4d65;
+    background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
   }
@@ -291,12 +291,12 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #2d4d65;
+    background-color: #265c85;
     height: 270px;
     transition: 0.8s ease-in-out;
   }
   .hswipe {
-    background-color: #2d4d65;
+    background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
   }
@@ -587,12 +587,12 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #2d4d65;
+    background-color: #265c85;
     height: 200px;
     transition: 0.8s ease-in-out;
   }
   .hswipe {
-    background-color: #2d4d65;
+    background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
   }
@@ -838,12 +838,12 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #2d4d65;
+    background-color: #265c85;
     height: 270px;
     transition: 0.8s ease-in-out;
   }
   .hswipe {
-    background-color: #2d4d65;
+    background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
   }
@@ -1106,12 +1106,12 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #2d4d65;
+    background-color: #265c85;
     height: 270px;
     transition: 0.8s ease-in-out;
   }
   .hswipe {
-    background-color: #2d4d65;
+    background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
   }
@@ -1318,4 +1318,11 @@ body {
 
 body {
   overflow: hidden;
+}
+
+.green {
+  color: green;
+}
+.red {
+  color: red;
 }
