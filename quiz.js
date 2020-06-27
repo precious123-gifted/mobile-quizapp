@@ -36,6 +36,7 @@ var question = [
   },
 ];
 var no = 0;
+var score = 0;
 
 window.addEventListener("load", preload());
 
@@ -212,6 +213,7 @@ function quiz1() {
     if (e.target.value == ans) {
       const selected = e.target;
       selected.classList.add("green");
+      score++;
     } else {
       const selected = e.target;
       selected.classList.add("red");
@@ -222,6 +224,41 @@ function quiz1() {
   });
 
   function quiz2() {
+    function gameover() {
+      Body.removeChild(qDiv);
+      Body.removeChild(Options);
+      Body.appendChild(homeButton);
+      homeButton.addEventListener("click", () => {
+        Header.style.height = "";
+        Body.style.height = "";
+        Body.removeChild(homeButton);
+        overb.remove();
+        no = 0;
+
+        home();
+      });
+      Header.removeChild(Timer);
+      Header.style.height = "10px";
+      Body.style.height = "813px";
+
+      overbody = document.createElement("div");
+      overbody.classList.add("overpage");
+      overb = document.createElement("div");
+      overb.classList.add("overb");
+      gameovertext = document.createElement("h1");
+      gameovertext.classList.add("gamet");
+      gameovertext.textContent = "Game Over";
+      scoretext = document.createElement("h2");
+      scoretext.classList.add("scoret");
+      scoretext.textContent = "score : " + score;
+
+      Body.appendChild(overbody);
+      overbody.appendChild(overb);
+      overb.appendChild(gameovertext);
+      overb.appendChild(scoretext);
+    }
+
+    //quiz2
     if (no < question.length - 1) {
       clearInterval(time);
 
@@ -247,6 +284,12 @@ function quiz1() {
       }
 
       Body.appendChild(Options);
+      homeButton.addEventListener("click", () => {
+        clearInterval(time);
+        no = 0;
+        score = 0;
+      });
+
       nextButton.style.display = "none";
 
       correctAns.style.display = "none";
@@ -274,12 +317,13 @@ function quiz1() {
       ansP.textContent = question[no].ans;
       ans = question[no].ans;
     } else {
-      alert("quiz finished");
+      gameover();
     }
   }
 
   homeButton.addEventListener("click", (e) => {
     if (e.target.classList == "homeb") {
+      clearInterval(time);
       header.classList.remove("hswipe");
       body.classList.remove("bswipe");
       document.getElementById("timer").remove();
@@ -287,7 +331,8 @@ function quiz1() {
       document.getElementById("qdiv").remove();
       document.getElementById("options").remove();
       document.getElementById("home").remove();
-
+      no = 0;
+      score = 0;
       home();
     }
   });

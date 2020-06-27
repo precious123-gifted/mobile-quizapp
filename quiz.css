@@ -48,6 +48,26 @@ body {
     height: 90px;
     transition: 0.8s ease-in-out;
   }
+
+  .overb {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    color: #3176aa;
+  }
+  .gamet {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
+  .scoret {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
   .timer {
     align-self: center;
 
@@ -299,6 +319,25 @@ body {
     background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
+  }
+  .overb {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    color: #3176aa;
+  }
+  .gamet {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
+  .scoret {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
   }
   .timer {
     padding-top: 20px;
@@ -596,6 +635,25 @@ body {
     height: 90px;
     transition: 0.8s ease-in-out;
   }
+  .overb {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    color: #3176aa;
+  }
+  .gamet {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
+  .scoret {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
   .timer {
     padding-top: 20px;
     padding-left: 20px;
@@ -846,6 +904,25 @@ body {
     background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
+  }
+  .overb {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    color: #3176aa;
+  }
+  .gamet {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
+  .scoret {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
   }
   .timer {
     align-self: center;
@@ -1114,6 +1191,25 @@ body {
     background-color: #204969;
     height: 90px;
     transition: 0.8s ease-in-out;
+  }
+  .overb {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    color: #3176aa;
+  }
+  .gamet {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
+  }
+  .scoret {
+    font-family: Karma;
+    text-align: center;
+    align-self: center;
+    position: relative;
   }
   .timer {
     align-self: center;
