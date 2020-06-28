@@ -40,6 +40,9 @@ var no = 0;
 var score = 0;
 
 window.addEventListener("load", preload());
+window.addEventListener("load", () => {
+  highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
+});
 
 function preload() {
   load = document.getElementById("loader");
@@ -307,7 +310,10 @@ function quiz1() {
       scoretext.classList.add("scoret");
       scoretext.textContent = "score : " + score;
       if (score > highscore[0].score) {
-        highscore[0].score = score;
+        localStorage.setItem("highest score", score);
+        console.log(localStorage);
+        highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
+        console.log(highscore[0].score);
       }
 
       Body.appendChild(overbody);
