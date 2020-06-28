@@ -35,6 +35,7 @@ var question = [
     ans: "A kit",
   },
 ];
+var highscore = [{ score: "" }];
 var no = 0;
 var score = 0;
 
@@ -91,6 +92,12 @@ function home() {
   scoreButton.type = "button";
   scoreButton.value = "high score";
   scoreButton.classList.add("buttb");
+  scoreButton.addEventListener("click", () => {
+    Header.innerHTML = "";
+    header.classList.add("hsswipe");
+    body.style.height = "1013px";
+    setTimeout(highscoreslide, 550);
+  });
 
   Header.appendChild(Hi);
   Hi.appendChild(icon);
@@ -100,6 +107,54 @@ function home() {
   Butt.appendChild(scoreButton);
 }
 home();
+function highscoreslide() {
+  Butt = document.getElementById("butt");
+  Butt.remove();
+  highb1 = document.createElement("input");
+  highb1.type = "button";
+  highb1.classList.add("high1");
+
+  highb2 = document.createElement("input");
+  highb2.type = "button";
+  highb2.classList.add("high2");
+
+  highscorediv = document.createElement("div");
+  highscorediv.classList.add("highscorediv");
+
+  hightext = document.createElement("h1");
+
+  hightext.textContent = "High Score :  " + highscore[0].score;
+  hightext.classList.add("hightext");
+
+  homeButton = document.createElement("input");
+  homeButton.id = "home";
+  homeButton.type = "button";
+  homeButton.value = "home";
+  homeButton.classList.add("hhomeb");
+
+  Body.appendChild(highb1);
+  Body.appendChild(highb2);
+  Body.appendChild(highscorediv);
+  highscorediv.appendChild(hightext);
+  Body.appendChild(homeButton);
+  homeButton.addEventListener("click", () => {
+    highb1.style.animationName = "high1re";
+    highb2.style.animationName = "high2re";
+
+    hightext.remove();
+    homeButton.remove();
+    setTimeout(remhighswipe, 940);
+  });
+}
+function remhighswipe() {
+  highb1.remove();
+  highb2.remove();
+
+  header.classList.remove("hsswipe");
+  body.style.height = "";
+
+  home();
+}
 function swipe() {
   Header.innerHTML = "";
 
@@ -251,6 +306,9 @@ function quiz1() {
       scoretext = document.createElement("h2");
       scoretext.classList.add("scoret");
       scoretext.textContent = "score : " + score;
+      if (score > highscore[0].score) {
+        highscore[0].score = score;
+      }
 
       Body.appendChild(overbody);
       overbody.appendChild(overb);
@@ -317,6 +375,7 @@ function quiz1() {
       ansP.textContent = question[no].ans;
       ans = question[no].ans;
     } else {
+      score;
       gameover();
     }
   }
