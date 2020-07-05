@@ -16,8 +16,8 @@ var question = [
   },
   {
     q: "Who painted the Mona Lisa?",
-    opt: ["Andy Warhol", "Pablo Picasso", "Mercury", "Leonardo da vinci"],
-    ans: "Leonardo da vinci",
+    opt: ["Andy Warhol", "Pablo Picasso", "Mercury", "Leonardo Da Vinci"],
+    ans: "Leonardo Da Vinci",
   },
   {
     q: "What is the largest country in the world?",
