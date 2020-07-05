@@ -1,38 +1,109 @@
 var question = [
   {
-    q: "who is the founder of under armour ?",
-    opt: ["justin beiber", "kevin plank", "dwayne johnson", "andy hubbard"],
-    ans: "kevin plank",
+    q: "Who is the founder of Under Armour ?",
+    opt: ["Justin Beiber", "Kevin Plank", "Dwayne Johnson", "Andy Hubbard"],
+    ans: "Kevin Plank",
   },
   {
     q: "What's the biggest animal in the world?",
-    opt: ["whale shark", "the african elephant", "the blue whale", "ostrich"],
-    ans: "the blue whale",
+    opt: ["Whale Shark", "The African Elephant", "The Blue Whale", "Ostrich"],
+    ans: "The Blue Whale",
   },
   {
     q: "What is the capital of Iceland?",
-    opt: ["Reykjavík", "tirana", "zagreb", "budapest"],
+    opt: ["Reykjavík", "Tirana", "Zagreb", "Budapest"],
     ans: "Reykjavík",
   },
   {
     q: "Who painted the Mona Lisa?",
-    opt: ["andy warhol", "pablo picasso", "mercury", "leonardo da vinci"],
-    ans: "leonardo da vinci",
+    opt: ["Andy Warhol", "Pablo Picasso", "Mercury", "Leonardo da vinci"],
+    ans: "Leonardo da vinci",
   },
   {
     q: "What is the largest country in the world?",
-    opt: ["spain", "russia", "china", "netherland"],
-    ans: "russia",
+    opt: ["Spain", "Russia", "China", "Netherland"],
+    ans: "Russia",
   },
   {
     q: "How many valves does the heart have?",
-    opt: ["one", "two", "three", "four"],
-    ans: "four",
+    opt: ["One", "Two", "Three", "Four"],
+    ans: "Four",
   },
   {
-    q: "What's a baby rabbit called?",
-    opt: ["chick", "rabbin", "A kit", "puppy"],
-    ans: "A kit",
+    q: "What's the name of the river that runs through Egypt?",
+    opt: ["Chobe River", "Blue Nile River", "Limpopo", "The Nile"],
+    ans: "The Nile",
+  },
+  {
+    q: "What's the capital of Spain?",
+    opt: ["Barcelonia", "Valencia", "Gijon", "Madrid"],
+    ans: "Madrid",
+  },
+  {
+    q: "What is the main fruit in Ribena?",
+    opt: ["Blackberries", "Blackcurrants", "Blueberries", "Grapes"],
+    ans: "Blackcurrants",
+  },
+  {
+    q: "What does BBC stand for?",
+    opt: [
+      "Breakingnes British Company",
+      "British Broadcasting Commission",
+      "British Broadcasting Company",
+      "British Broadcasting Corporation",
+    ],
+    ans: "British Broadcasting Corporation",
+  },
+  {
+    q: "Tom Cruise is an outspoken member of which religion?",
+    opt: ["islam", "Christianity", "Scientology", "Hinduism"],
+    ans: "Scientology",
+  },
+  {
+    q: " Who scored the first Premier League hat-trick?",
+    opt: ["Eric Cantona", "Tony Cottee", "Mark Robins", "Andy Sinton"],
+    ans: "Eric Cantona",
+  },
+  {
+    q: "Which year was the Premier League founded?",
+    opt: ["1975", "1970", "1992", "1980"],
+    ans: "1992",
+  },
+  {
+    q: "What was Britney Spears’ first single called?",
+    opt: ["Toxic", "Baby One More Time", "Criminal", "Circus"],
+    ans: "Baby One More Time",
+  },
+  {
+    q: " What is Japanese sake made from?",
+    opt: ["Fish", "Vegetables", "Meat", "Rice"],
+    ans: "Rice",
+  },
+  {
+    q:
+      "In which year did Britain originally join the EEC, now known as the European Union?",
+    opt: ["1898", "1973", "1950", "1982"],
+    ans: "1973",
+  },
+  {
+    q: " In golf, where does the Masters take place?",
+    opt: ["St Andrews", "Turnberry", "Muirfield", "Augusta National"],
+    ans: "Augusta National",
+  },
+  {
+    q: " What is the smallest country in the world?",
+    opt: ["Cyprus", "Barbados", "Monaco", "Vatican City"],
+    ans: "Vatican City",
+  },
+  {
+    q: "which of this animals is jawless?",
+    opt: ["Hag Fish", "Viper Snake", "Dolphin", "Dove"],
+    ans: "Hag Fish",
+  },
+  {
+    q: " What is the capital of Chile?",
+    opt: ["Santiago", "Kabul", "Tirana", "Baku"],
+    ans: "Santiago",
   },
 ];
 var highscore = [{ score: "" }];
@@ -41,7 +112,11 @@ var score = 0;
 
 window.addEventListener("load", preload());
 window.addEventListener("load", () => {
-  highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
+  if (JSON.parse(localStorage.getItem("highest score"))) {
+    highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
+  } else {
+    highscore[0].score = "";
+  }
 });
 
 function preload() {
