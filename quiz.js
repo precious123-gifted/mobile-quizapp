@@ -17,7 +17,7 @@ var question = [
   {
     q: "Who painted the Mona Lisa?",
     opt: ["andy warhol", "pablo picasso", "mercury", "leonardo da vinci"],
-    ans: "leonardo da vinci",
+    ans: "mercury",
   },
   {
     q: "What is the largest country in the world?",
@@ -41,7 +41,7 @@ var score = 0;
 
 window.addEventListener("load", preload());
 window.addEventListener("load", () => {
-  highscore[0].score = JSON.parse(localStorage.getItem("highest score"))});
+  highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
 });
 
 function preload() {
@@ -98,7 +98,7 @@ function home() {
   scoreButton.addEventListener("click", () => {
     Header.innerHTML = "";
     header.classList.add("hsswipe");
-    body.style.height = "1013px";
+    body.style.height = "4013px";
     setTimeout(highscoreslide, 550);
   });
 
@@ -297,7 +297,7 @@ function quiz1() {
       });
       Header.removeChild(Timer);
       Header.style.height = "10px";
-      Body.style.height = "813px";
+      Body.style.height = "4813px";
 
       overbody = document.createElement("div");
       overbody.classList.add("overpage");
