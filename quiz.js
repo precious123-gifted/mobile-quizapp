@@ -40,9 +40,8 @@ var no = 0;
 var score = 0;
 
 window.addEventListener("load", preload());
-window.addEventListener("load", () => {if(JSON.parse(localStorage.getItem("highest score")){
-  highscore[0].score = JSON.parse(localStorage.getItem("highest score")}
-else{ highscore[0].score = ''});
+window.addEventListener("load", () => {
+  highscore[0].score = JSON.parse(localStorage.getItem("highest score"))});
 });
 
 function preload() {
