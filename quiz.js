@@ -17,7 +17,7 @@ var question = [
   {
     q: "Who painted the Mona Lisa?",
     opt: ["andy warhol", "pablo picasso", "mercury", "leonardo da vinci"],
-    ans: "mercury",
+    ans: "leonardo da vinci",
   },
   {
     q: "What is the largest country in the world?",
@@ -98,7 +98,7 @@ function home() {
   scoreButton.addEventListener("click", () => {
     Header.innerHTML = "";
     header.classList.add("hsswipe");
-    body.style.height = "4013px";
+    body.style.height = "1013px";
     setTimeout(highscoreslide, 550);
   });
 
@@ -297,7 +297,7 @@ function quiz1() {
       });
       Header.removeChild(Timer);
       Header.style.height = "10px";
-      Body.style.height = "4813px";
+      Body.style.height = "813px";
 
       overbody = document.createElement("div");
       overbody.classList.add("overpage");
@@ -309,11 +309,13 @@ function quiz1() {
       scoretext = document.createElement("h2");
       scoretext.classList.add("scoret");
       scoretext.textContent = "score : " + score;
-      if (score > highscore[0].score) {
+      if (score && score > highscore[0].score) {
         localStorage.setItem("highest score", score);
         console.log(localStorage);
         highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
         console.log(highscore[0].score);
+      } else {
+        highscore[0].score = "";
       }
 
       Body.appendChild(overbody);
