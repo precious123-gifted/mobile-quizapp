@@ -105,6 +105,7 @@ var question = [
     opt: ["Santiago", "Kabul", "Tirana", "Baku"],
     ans: "Santiago",
   },
+  ,
 ];
 var highscore = [{ score: "" }];
 var no = 0;
@@ -143,9 +144,6 @@ function home() {
   Header = document.getElementById("header");
   Body = document.getElementById("body");
 
-  /*header.style.height = "270px";
-  body.style.height = "397px";*/
-
   Hi = document.createElement("h1");
   Hi.textContent = "QUIZ GENIUS";
   icon = document.createElement("img");
@@ -173,7 +171,7 @@ function home() {
   scoreButton.addEventListener("click", () => {
     Header.innerHTML = "";
     header.classList.add("hsswipe");
-    body.style.height = "1013px";
+    body.style.height = "100vh";
     setTimeout(highscoreslide, 550);
   });
 
@@ -188,6 +186,8 @@ home();
 function highscoreslide() {
   Butt = document.getElementById("butt");
   Butt.remove();
+  highbdiv = document.createElement("div");
+
   highb1 = document.createElement("input");
   highb1.type = "button";
   highb1.classList.add("high1");
@@ -210,8 +210,9 @@ function highscoreslide() {
   homeButton.value = "home";
   homeButton.classList.add("hhomeb");
 
-  Body.appendChild(highb1);
-  Body.appendChild(highb2);
+  Body.appendChild(highbdiv);
+  highbdiv.appendChild(highb1);
+  highbdiv.appendChild(highb2);
   Body.appendChild(highscorediv);
   highscorediv.appendChild(hightext);
   Body.appendChild(homeButton);
@@ -306,6 +307,7 @@ function quiz1() {
   optionA = document.createElement("input");
   optionA.type = "button";
   optionA.value = question[no].opt[0];
+
   optionA.classList.add("optionsb");
 
   optionB = document.createElement("input");
@@ -372,7 +374,7 @@ function quiz1() {
       });
       Header.removeChild(Timer);
       Header.style.height = "10px";
-      Body.style.height = "813px";
+      Body.style.height = "100vh";
 
       overbody = document.createElement("div");
       overbody.classList.add("overpage");
