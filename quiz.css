@@ -1531,8 +1531,15 @@ font-size: 2em;
 }
 
 /*large tablets*/
-@media only screen and (min-width: 1024px) {
+
  
+ 
+
+/*normal laptop size*/
+@media only screen and (min-width: 1024px) {* {
+    margin: 0;
+  }
+
   .hightext {
     text-align: center;
     margin-right: 0;
@@ -1601,13 +1608,7 @@ font-size: 2em;
     }
   } 
 
-}
-
-
-  * {
-    margin: 0;
-  }
-
+  
   .loader {
     position: fixed;
     background-color: #333333;
@@ -1738,8 +1739,8 @@ font-size: 2em;
     background-color: #333333;
     transition: 1s ease-in-out;
 
-    height: 553px;
-    min-height: fit-content;
+    height: 100vh;
+    
     width: 100%;
 
     left: 327.28px;
@@ -2103,7 +2104,7 @@ font-size: 1vw;
     color: red;
   }
 
-
+}
 
 /*@media only screen and (min-width: 411px) {
   * {
