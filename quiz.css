@@ -2070,7 +2070,7 @@ body {
   }
 }
 /*laptop 11 12 13 14 inches*/
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (min-device-width: 1040px) {
   * {
     margin: 0;
   }
@@ -2171,8 +2171,9 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: #265c85;
-    height: 100px;
+    background-color: red;
+
+    height: 180px;
     transition: 0.8s ease-in-out;
   }
   .hsswipe {
@@ -2250,7 +2251,7 @@ body {
   header h1 {
     position: absolute;
     top: 20%;
-    left: 58vw;
+    left: 52vw;
     transform: translateX(-50%) translateY(-50%);
     width: 40vw;
     color: #e5e5e5;
@@ -2593,8 +2594,8 @@ body {
     transform: translateX(-50%) translateY(-50%);
   }
   .buttb {
-    height: 59px;
-    width: 17vw;
+    height: 29px;
+    width: 140px;
     margin-top: 1vh;
     display: list-item;
     border-radius: 19.5px;
