@@ -2070,7 +2070,7 @@ body {
   }
 }
 /*laptop 11 12 13 14 inches*/
-@media screen and (min-device-width: 1040px) {
+@media screen and (min-device-width: 1200px) {
   * {
     margin: 0;
   }
@@ -2171,9 +2171,8 @@ body {
     background-color: #e5e5e5;
   }
   header {
-    background-color: red;
-
-    height: 180px;
+    background-color: #265c85;
+    height: 100px;
     transition: 0.8s ease-in-out;
   }
   .hsswipe {
@@ -2251,7 +2250,7 @@ body {
   header h1 {
     position: absolute;
     top: 20%;
-    left: 52vw;
+    left: 58vw;
     transform: translateX(-50%) translateY(-50%);
     width: 40vw;
     color: #e5e5e5;
@@ -2594,8 +2593,8 @@ body {
     transform: translateX(-50%) translateY(-50%);
   }
   .buttb {
-    height: 29px;
-    width: 140px;
+    height: 59px;
+    width: 17vw;
     margin-top: 1vh;
     display: list-item;
     border-radius: 19.5px;
