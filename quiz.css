@@ -2888,14 +2888,11 @@ body {
     align-self: center;
     position: absolute;
     top: 63vh;
-    margin-left: 47vw;
 
-    transform: translateX(-50%) translateY(-50%);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2vw;
 
-    left: -400px;
     opacity: 0;
     animation: slideIn 0.7s ease-in forwards;
   }
@@ -2921,7 +2918,8 @@ body {
 
     100% {
       opacity: 1;
-      left: -0;
+      left: 0.2%;
+      transform: translateX(-50%) translateY(-50%);
     }
   }
 
