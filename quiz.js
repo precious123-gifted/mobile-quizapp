@@ -105,7 +105,6 @@ var question = [
     opt: ["Santiago", "Kabul", "Tirana", "Baku"],
     ans: "Santiago",
   },
-  ,
 ];
 var highscore = [{ score: "" }];
 var no = 0;
