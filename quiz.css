@@ -2447,7 +2447,7 @@ svg {
   }
   @keyframes high1 {
     0% {
-      top: 43.5%;
+      top: 20.5%;
     }
 
     50% {
@@ -2464,7 +2464,7 @@ svg {
     100% {
       top: 13.5%;
       transform: rotate(-90deg);
-      margin-left: -180px;
+      margin-left: -235px;
       background-color: #3176aa;
       line-height: 1px;
     }
@@ -2472,7 +2472,7 @@ svg {
 
   @keyframes high2 {
     0% {
-      top: 50%;
+      top: 35%;
     }
 
     50% {
@@ -2502,11 +2502,11 @@ svg {
       line-height: 1px;
     }
     100% {
-      top: 43vh;
+      top: 33vh;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      height: 2vh;
-
+      height: 5vh;
+      width: 23px;
       transition: 0.8s ease-in-out;
     }
   }
@@ -2519,11 +2519,11 @@ svg {
       background-color: #3176aa;
     }
     100% {
-      top: 46vh;
+      top: 39vh;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      height: 2vh;
-
+      height: 5vh;
+      width: 23px;
       transition: 0.8s ease-in-out;
     }
   }
@@ -2531,7 +2531,7 @@ svg {
     margin: auto;
     color: #568fbb;
 
-    top: 13.5vh;
+    top: 22.5vh;
 
     position: relative;
   }
