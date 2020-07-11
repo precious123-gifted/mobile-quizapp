@@ -715,7 +715,7 @@ header img {
   }
   100% {
     opacity: 1;
-    top: 93%;
+    top: 93vh;
   }
 }
 .optionsb {
@@ -747,7 +747,7 @@ header img {
   width: 97px;
   height: 6vh;
   left: 50%;
-  top: 100vh;
+
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   align-self: center;
@@ -1239,7 +1239,7 @@ svg {
     }
     100% {
       opacity: 1;
-      top: 93%;
+      top: 93vh;
     }
   }
   .optionsb {
@@ -1271,7 +1271,7 @@ svg {
     width: 145px;
     height: 6vh;
     left: 50%;
-    top: 100vh;
+
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     align-self: center;
@@ -1794,7 +1794,7 @@ svg {
     }
     100% {
       opacity: 1;
-      top: 93%;
+      top: 93vh;
     }
   }
   .optionsb {
@@ -1826,7 +1826,7 @@ svg {
     width: 140px;
     height: 3vh;
     left: 50%;
-    top: 100vh;
+
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     align-self: center;
@@ -2074,13 +2074,12 @@ svg {
     }
     100% {
       opacity: 1;
-      top: 93%;
+      top: 93vh;
     }
   }
   .homeb {
     width: 200px;
     height: 4.5vh;
-    top: 1900%;
   }
   .hhomeb {
     width: 200px;
