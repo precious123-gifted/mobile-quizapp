@@ -282,6 +282,16 @@ function quiz1() {
   qp = document.createElement("p");
   qp.innerHTML = question[no].q;
 
+  gotIt = document.createElement("div");
+  gotIt.classList.add("question", "correctans");
+  correct = document.createElement("h1");
+  correct.textContent = "correct";
+  correct.style.marginTop = "20px";
+  thumbsUp = document.createElement("img");
+  thumbsUp.style.width = "80px";
+  thumbsUp.style.height = "80px";
+  thumbsUp.src = "thumbs.png";
+
   correctAns = document.createElement("div");
   Ans = document.createElement("h4");
 
@@ -290,14 +300,30 @@ function quiz1() {
   ansP = document.createElement("h1");
   ansP.classList.add("answer");
 
+  quesLength = question.length;
+  var quesNo = 1;
+
+  qTracker = document.createElement("h4");
+  qTracker.textContent = quesNo + "/" + quesLength;
+  qTracker.classList.add("qtracker");
+  console.log(qTracker);
+
   nextButton = document.createElement("input");
   nextButton.id = "next";
   nextButton.type = "button";
   nextButton.value = "next";
   nextButton.classList.add("qdivb");
   nextButton.style.display = "none";
-
-  nextButton.addEventListener("click", quiz2);
+  function quesPlus() {
+    nextButton.addEventListener("click", () => {
+      qTracker.textContent = quesNo++ + "/" + quesLength;
+    });
+  }
+  quesPlus();
+  nextButton.addEventListener("click", () => {
+    qTracker.textContent = quesNo + "/" + quesLength;
+    quiz2();
+  });
 
   Options = document.createElement("div");
   Options.id = "options";
@@ -347,6 +373,8 @@ function quiz1() {
     if (e.target.value == ans) {
       const selected = e.target;
       selected.classList.add("green");
+      gotIt.style.display = "flex";
+      qp.style.display = "none";
       score++;
     } else {
       const selected = e.target;
@@ -359,6 +387,7 @@ function quiz1() {
 
   function quiz2() {
     function gameover() {
+      qTracker.remove();
       Body.removeChild(qDiv);
       Body.removeChild(Options);
       Body.appendChild(homeButton);
@@ -391,7 +420,7 @@ function quiz1() {
         highscore[0].score = JSON.parse(localStorage.getItem("highest score"));
         console.log(highscore[0].score);
       } else {
-        highscore[0].score = "";
+        highscore[0].score = highscore[0].score;
       }
 
       Body.appendChild(overbody);
@@ -401,6 +430,7 @@ function quiz1() {
     }
 
     //quiz2
+
     if (no < question.length - 1) {
       clearInterval(time);
 
@@ -426,16 +456,21 @@ function quiz1() {
       }
 
       Body.appendChild(Options);
+      Body.appendChild(qTracker);
+
       homeButton.addEventListener("click", () => {
         clearInterval(time);
         no = 0;
         score = 0;
+        qTracker.remove();
       });
 
       nextButton.style.display = "none";
 
       correctAns.style.display = "none";
+      gotIt.style.display = "none";
       qp.style.display = "";
+
       Options.addEventListener("click", () => {
         clearInterval(time);
       });
@@ -467,6 +502,7 @@ function quiz1() {
   homeButton.addEventListener("click", (e) => {
     if (e.target.classList == "homeb") {
       clearInterval(time);
+      qTracker.remove();
       header.classList.remove("hswipe");
       body.classList.remove("bswipe");
       document.getElementById("timer").remove();
@@ -483,6 +519,7 @@ function quiz1() {
   Body.appendChild(qDiv);
   Body.appendChild(Options);
   Body.appendChild(homeButton);
+  Body.appendChild(qTracker);
 
   Options.appendChild(optionA);
   Options.appendChild(optionB);
@@ -490,7 +527,11 @@ function quiz1() {
   Options.appendChild(optionD);
   qDiv.appendChild(nextButton);
   qDiv.appendChild(Question);
+  qDiv.appendChild(gotIt);
   qDiv.appendChild(correctAns);
+  gotIt.appendChild(thumbsUp);
+  gotIt.appendChild(correct);
+
   correctAns.appendChild(Ans);
   correctAns.appendChild(ansP);
   Question.appendChild(qp);

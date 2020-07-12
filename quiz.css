@@ -668,6 +668,14 @@ header img {
   }
 }
 
+.qtracker {
+  top: 12vh;
+  left: 8%;
+
+  position: absolute;
+  color: #e5e5e5;
+  transition: 1s ease-in-out;
+}
 .qdivb {
   left: 84%;
   margin-right: 2%;
@@ -737,7 +745,7 @@ header img {
 
   font-weight: 300;
 
-  font-size: 6vw;
+  font-size: 5.6vw;
   line-height: 29px;
   animation: slideIn 0.7s ease-in forwards;
 }
@@ -1191,7 +1199,14 @@ svg {
       opacity: 1;
     }
   }
-
+  .qtracker {
+    top: 12vh;
+    left: 8.2%;
+    font-size: 3vw;
+    position: absolute;
+    color: #e5e5e5;
+    transition: 1s ease-in-out;
+  }
   .qdivb {
     left: 84%;
     margin-right: 2%;
@@ -1743,7 +1758,14 @@ svg {
       opacity: 1;
     }
   }
-
+  .qtracker {
+    top: 12vh;
+    left: 7vw;
+    font-size: 3vw;
+    position: absolute;
+    color: #e5e5e5;
+    transition: 1s ease-in-out;
+  }
   .qdivb {
     left: 85vw;
     margin-right: 2%;
