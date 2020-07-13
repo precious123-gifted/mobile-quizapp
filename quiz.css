@@ -516,6 +516,9 @@ body {
 
   pointer-events: none;
 }
+.gotit {
+  display: none;
+}
 .correctans {
   display: none;
 }
@@ -650,7 +653,7 @@ header img {
   border-radius: 10px;
   animation: fadeIn 1s ease forwards;
   opacity: 0;
-  padding: 20px;
+  padding: 25px;
   overflow: hidden;
 
   font-size: 1.5em;
@@ -688,8 +691,7 @@ header img {
   opacity: 0;
   animation: fadeIn 0.7s ease forwards;
 }
-.options {
-}
+
 @keyframes slideIn {
   0% {
     opacity: 0;
@@ -1606,6 +1608,7 @@ svg {
 
     pointer-events: none;
   }
+
   .correctans {
     display: none;
   }
@@ -2301,6 +2304,7 @@ svg {
     padding: 20px;
     overflow: hidden;
     text-align: center;
+    align-items: center;
     font-size: 2vw;
     font-weight: bold;
     color: #e5e5e5;

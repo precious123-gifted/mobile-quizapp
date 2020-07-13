@@ -283,21 +283,22 @@ function quiz1() {
   qp.innerHTML = question[no].q;
 
   gotIt = document.createElement("div");
-  gotIt.classList.add("question", "correctans");
+  gotIt.classList.add("question", "gotit");
   correct = document.createElement("h1");
-  correct.textContent = "correct";
+
   correct.style.marginTop = "20px";
   thumbsUp = document.createElement("img");
   thumbsUp.style.width = "80px";
   thumbsUp.style.height = "80px";
   thumbsUp.src = "thumbs.png";
 
+  correct.textContent = "correct";
   correctAns = document.createElement("div");
   Ans = document.createElement("h4");
 
   Ans.textContent = "correct answer is";
   correctAns.classList.add("question", "correctans");
-  ansP = document.createElement("h1");
+  ansP = document.createElement("h2");
   ansP.classList.add("answer");
 
   quesLength = question.length;
@@ -306,7 +307,6 @@ function quiz1() {
   qTracker = document.createElement("h4");
   qTracker.textContent = quesNo + "/" + quesLength;
   qTracker.classList.add("qtracker");
-  console.log(qTracker);
 
   nextButton = document.createElement("input");
   nextButton.id = "next";
@@ -374,6 +374,7 @@ function quiz1() {
       const selected = e.target;
       selected.classList.add("green");
       gotIt.style.display = "flex";
+
       qp.style.display = "none";
       score++;
     } else {
