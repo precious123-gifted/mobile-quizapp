@@ -2,7 +2,7 @@ body {
   overflow: hidden;
 }
 /*mobile screens*/
-/*@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) {
   * {
     margin: 0;
   }
@@ -27,6 +27,9 @@ body {
     opacity: 0;
 
     pointer-events: none;
+  }
+  .gotit {
+    display: none;
   }
   .correctans {
     display: none;
@@ -118,9 +121,9 @@ body {
   header h1 {
     position: absolute;
     top: 20%;
-    left: 53%;
+    left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    width: 270px;
+    width: fit-content;
     color: #e5e5e5;
   }
   header img {
@@ -134,27 +137,21 @@ body {
     background-color: #333333;
     transition: 1s ease-in-out;
 
-    height: 553px;
-    min-height: fit-content;
-    width: 100%;
+    height: 100vh;
 
-    left: 327.28px;
-    top: 260.23px;
+    overflow: hidden;
   }
   .bswipe {
     margin-top: 0;
     background-color: #333333;
     transition: 0.8s ease-in-out;
-
-    height: 733px;
-
-    left: 327.28px;
-    top: 360.23px;
+    overflow: hidden;
+    height: 90vh;
   }
   .question {
     width: 78%;
-    height: 22vh;
-    top: 33%;
+    height: 27vh;
+    top: 33vh;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     transition: 2s ease-in-out;
@@ -162,10 +159,10 @@ body {
     border-radius: 10px;
     animation: fadeIn 1s ease forwards;
     opacity: 0;
-    padding: 20px;
+    padding: 25px;
     overflow: hidden;
 
-    font-size: larger;
+    font-size: 1.5em;
     font-weight: bold;
     color: #e5e5e5;
     background-color: rgba(126, 126, 126, 0.2);
@@ -180,6 +177,14 @@ body {
     }
   }
 
+  .qtracker {
+    top: 12vh;
+    left: 8%;
+
+    position: absolute;
+    color: #e5e5e5;
+    transition: 1s ease-in-out;
+  }
   .qdivb {
     left: 84%;
     margin-right: 2%;
@@ -192,17 +197,7 @@ body {
     opacity: 0;
     animation: fadeIn 0.7s ease forwards;
   }
-  .options {
-    align-self: center;
-    position: absolute;
-    top: 52%;
-    margin-left: 5%;
-    width: 39.5%;
 
-    left: -400px;
-    opacity: 0;
-    animation: slideIn 0.7s ease-in forwards;
-  }
   @keyframes slideIn {
     0% {
       opacity: 0;
@@ -236,13 +231,17 @@ body {
     }
     100% {
       opacity: 1;
-      top: 93%;
+      top: 90vh;
     }
   }
   .optionsb {
+    top: 42vh;
+    position: relative;
+    margin: auto;
+
     display: list-item;
 
-    width: 226%;
+    width: 89vw;
     height: 7vh;
     outline: none;
     background: #d6d6d6;
@@ -251,11 +250,12 @@ body {
     border-radius: 40px;
 
     margin-bottom: 6px;
-    font-family: Karma;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
+
+    font-weight: 300;
+
+    font-size: 5.6vw;
     line-height: 29px;
+    animation: slideIn 0.7s ease-in forwards;
   }
 
   .homeb {
@@ -263,7 +263,7 @@ body {
     width: 97px;
     height: 6vh;
     left: 50%;
-    top: 100vh;
+
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     align-self: center;
@@ -284,8 +284,7 @@ body {
     width: 97px;
     height: 6vh;
     left: 50%;
-    top: 100vh;
-    left: 50%;
+
     transform: translateX(-50%) translateY(-50%);
     align-self: center;
     transition: 0.8s ease-in-out;
@@ -391,12 +390,12 @@ body {
       line-height: 1px;
     }
     100% {
-      top: 43.6vh;
+      top: 44.1vh;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+      height: 4vh;
 
       transition: 0.8s ease-in-out;
-      height: 27px;
     }
   }
 
@@ -406,20 +405,18 @@ body {
       transform: rotate(10deg);
       margin-left: 80px;
       background-color: #3176aa;
-      line-height: 1px;
     }
     100% {
       top: 48.9vh;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
+      height: 4vh;
 
       transition: 0.8s ease-in-out;
-      height: 27px;
     }
   }
   .highscorediv {
-    text-align: center;
-    align-self: center;
+    margin: auto;
     color: #568fbb;
 
     top: 13.5vh;
@@ -461,7 +458,7 @@ body {
     transform: translateX(-50%) translateY(-50%);
   }
   .buttb {
-    height: 27px;
+    height: 4vh;
     margin-top: 1vh;
     display: list-item;
     border-radius: 15.5px;
@@ -489,7 +486,7 @@ body {
   .red {
     color: red;
   }
-}*/
+}
 
 * {
   margin: 0;
