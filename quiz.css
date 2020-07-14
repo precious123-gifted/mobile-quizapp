@@ -627,25 +627,19 @@ header img {
 
   height: 100vh;
 
-  width: 100%;
-
-  left: 327.28px;
-  top: 260.23px;
+  overflow: hidden;
 }
 .bswipe {
   margin-top: 0;
   background-color: #333333;
   transition: 0.8s ease-in-out;
-
-  height: 100vh;
-
-  left: 327.28px;
-  top: 360.23px;
+  overflow: hidden;
+  height: 90vh;
 }
 .question {
   width: 78%;
   height: 27vh;
-  top: 33%;
+  top: 33vh;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   transition: 2s ease-in-out;
@@ -725,7 +719,7 @@ header img {
   }
   100% {
     opacity: 1;
-    top: 93vh;
+    top: 90vh;
   }
 }
 .optionsb {
@@ -778,8 +772,7 @@ header img {
   width: 97px;
   height: 6vh;
   left: 50%;
-  top: 100vh;
-  left: 50%;
+
   transform: translateX(-50%) translateY(-50%);
   align-self: center;
   transition: 0.8s ease-in-out;
@@ -982,43 +975,6 @@ svg {
   color: red;
 }
 
-/*@media only screen and (height: 480px) {
-  @keyframes high1re {
-    0% {
-      top: 13.5%;
-      transform: rotate(-10deg);
-      margin-left: -180px;
-      background-color: #3176aa;
-      line-height: 1px;
-    }
-    100% {
-      top: 42.6vh;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      height: 5vh;
-
-      transition: 0.8s ease-in-out;
-    }
-  }
-
-  @keyframes high2re {
-    0% {
-      top: 13.5%;
-      transform: rotate(10deg);
-      margin-left: 80px;
-      background-color: #3176aa;
-    }
-    100% {
-      top: 48.9vh;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      height: 5vh;
-
-      transition: 0.8s ease-in-out;
-    }
-  }
-}
-
 /*tablets*/
 
 @media only screen and (min-width: 750px) {
@@ -1169,9 +1125,6 @@ svg {
     transition: 0.8s ease-in-out;
 
     height: 100vh;
-
-    left: 327.28px;
-    top: 360.23px;
   }
   .question {
     width: 78%;
@@ -1729,9 +1682,6 @@ svg {
     transition: 0.8s ease-in-out;
 
     height: 100vh;
-
-    left: 327.28px;
-    top: 360.23px;
   }
   .question {
     width: 84vw;
@@ -2286,9 +2236,6 @@ svg {
     transition: 0.8s ease-in-out;
 
     height: 100vh;
-
-    left: 327.28px;
-    top: 360.23px;
   }
   .question {
     width: 84vw;
