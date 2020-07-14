@@ -236,7 +236,7 @@ header img {
 }
 .options {
   position: relative;
-  top: 48%;
+  top: 46%;
 }
 .optionsb {
   position: relative;
@@ -262,7 +262,7 @@ header img {
 .homeb {
   position: absolute;
   width: 97px;
-  height: 6vh;
+  height: 6%;
   left: 50%;
 
   left: 50%;
@@ -283,7 +283,7 @@ header img {
 .hhomeb {
   position: absolute;
   width: 97px;
-  height: 6vh;
+  height: 6%;
   left: 50%;
 
   transform: translateX(-50%) translateY(-50%);
